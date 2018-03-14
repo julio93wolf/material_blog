@@ -11,5 +11,18 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.scripts([
+	'resources/assets/js/vendor/jquery-3.3.1.js',
+	'resources/assets/js/vendor/materialize.js',
+	'resources/assets/js/vendor/vue.js',
+	'resources/assets/js/vendor/axios.js'
+	], 'public/js/main.js');
+
+mix.styles([
+	'resources/assets/css/materialize.css',
+	], 'public/css/main.css');
+
+//Login
+mix.js([
+	'resources/assets/js/module/login.js'
+	], 'public/js/module/login.js');
